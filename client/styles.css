@@ -1,0 +1,15 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+
+#complimentButton {
+    background-color: coral;
+    color:white;
+    padding:7px;
+    border:none;
+    border-radius:14px;
+    margin:25px auto;
+}

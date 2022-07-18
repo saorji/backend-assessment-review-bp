@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <button id="complimentButton" >Get a compliment</button>
+
+    <div>
+      <label for="goal-category">
+        Select a category for some killer advice!
+      </label>
+      <select name="" id="goal-category">
+        <option value="spirituality">Spirituality</option>
+        <option value="finance">Finance</option>
+        <option value="sports">Sports</option>
+        <option value="creative">Creative</option>
+        <option value="coding">Coding</option>
+      </select>
+      <button id="category-submit" >Get Advice</button>
+    </div>
+
+    <section id="add-goal">
+      Enter your category:
+      <input type="text" id="add-category">
+      <br>
+      <textarea type="text" rows="30" cols="40" id="add-advice" placeholder="enter advice here..."></textarea>
+      <button id="add-advice-btn">Add Advice</button>
+    </section>
+
+    <section id="display-section"></section>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
