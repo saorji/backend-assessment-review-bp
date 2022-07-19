@@ -5,6 +5,8 @@ const categoryBtn = document.getElementById("category-submit")
 const postAdviceBtn = document.getElementById("add-advice-btn")
 const categoryInput = document.getElementById("add-category")
 const adviceInput = document.getElementById("add-advice")
+const deleteCatinput = document.getElementById("delete-category-input")
+const deleteCatBtn = document.getElementById("delete-category-btn")
 
 const baseURL = `http://localhost:4000/api`
 
@@ -51,8 +53,20 @@ const postAdviceHandler = () => {
     .catch(err => console.log(err))
 }
 
+const deleteCatHandler = () => {
+    const params = deleteCatinput.value.toLowerCase()
+    axios.delete(`${baseURL}/goal/${params}`)
+    .then(res => {
+        displaySection.innerHTML = ``
+        alert(res.data)
+    })
+    .catch(err => console.log(err))
+}
+
 complimentBtn.addEventListener('click', getCompliment)
 
 categoryBtn.addEventListener("click",getAdviceHandler)
 
 postAdviceBtn.addEventListener("click",postAdviceHandler)
+
+deleteCatBtn.addEventListener("click",deleteCatHandler)

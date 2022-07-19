@@ -60,4 +60,14 @@ module.exports = {
     goalAdvice.push(newObj)
     res.status(200).send(goalAdvice[goalAdvice.length-1])
   },
+  deleteAdvice:(req,res) => {
+    const {category} = req.params
+    const foundIndex = goalAdvice.findIndex((goal) => goal.category === category);
+    if(foundIndex !== -1){
+      goalAdvice.splice(foundIndex,1)
+      res.status(200).send(`advice deleted`)
+      return
+    }
+    res.status(400).send(`something went wrong, try again!`)
+  }
 };
